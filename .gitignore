@@ -28,6 +28,7 @@ src/[Bb]uildReports/
 # Ignore JetBrains Rider and Visual Studio settings
 .idea/
 .vscode/
+.vs/
 *.sln
 *.csproj
 *.unityproj
