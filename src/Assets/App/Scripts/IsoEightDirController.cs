@@ -20,22 +20,20 @@ public class IsoEightDirController : MonoBehaviour
 
     void Update()
     {
-        // R�cup�re WASD/fl�ches (Input Manager classique)
+        // R�cupere WASD/fl�ches (Input Manager classique)
         input.x = Input.GetAxisRaw("Horizontal");
         input.y = Input.GetAxisRaw("Vertical");
         input = input.normalized;
-        Debug.Log("Input: " + input);
         // M�morise la derni�re direction non nulle pour l�Idle
         if (input.sqrMagnitude > 0.001f)
             lastMove = input;
 
-        // Param�tres d'animation
+        // Parametres d'animation
         float speed = input.sqrMagnitude; // 0..1
         if (anim)
         {
             // En mouvement on m�lange vers la bonne direction
             anim.SetFloat("Speed", speed);
-            Debug.Log("Speed: " + speed);
 
             if (speed > 0.001f)
             {
