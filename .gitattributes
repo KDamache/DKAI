@@ -27,3 +27,5 @@
 *.meta text eol=lf
 *.onnx filter=lfs diff=lfs merge=lfs -text
 *ggml*.bin filter=lfs diff=lfs merge=lfs -text
+src/Assets/StreamingAssets/undreamai-v1.2.6-llamacpp/**/*.dll filter=lfs diff=lfs merge=lfs -text
+src/Assets/StreamingAssets/undreamai-v1.2.6-llamacpp/**/*.so filter=lfs diff=lfs merge=lfs -text
