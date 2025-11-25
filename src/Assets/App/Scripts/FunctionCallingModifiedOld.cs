@@ -6,7 +6,7 @@ using System.Reflection;
 
 namespace LLMUnitySamples
 {
-    public static class FunctionsModified
+    public static class FunctionsModifiedOld
     {
         public static string Talk()
         {
@@ -22,9 +22,11 @@ namespace LLMUnitySamples
         {
             return "J'ENVOIE UNE POTION DE SOIN";
         }
+
+
     }
 
-    public class FunctionCallingModified : MonoBehaviour
+    public class FunctionCallingModifiedOld : MonoBehaviour
     {
         public LLMCharacter llmCharacter;
 
@@ -36,7 +38,7 @@ namespace LLMUnitySamples
         string[] GetFunctionNames()
         {
             List<string> functionNames = new List<string>();
-            foreach (var function in typeof(FunctionsModified).GetMethods(BindingFlags.Public | BindingFlags.Static | BindingFlags.DeclaredOnly)) functionNames.Add(function.Name);
+            foreach (var function in typeof(FunctionsModifiedOld).GetMethods(BindingFlags.Public | BindingFlags.Static | BindingFlags.DeclaredOnly)) functionNames.Add(function.Name);
             return functionNames.ToArray();
         }
 
@@ -57,7 +59,7 @@ namespace LLMUnitySamples
 
         string CallFunction(string functionName)
         {
-            return (string) typeof(FunctionsModified).GetMethod(functionName).Invoke(null, null);
+            return (string) typeof(FunctionsModifiedOld).GetMethod(functionName).Invoke(null, null);
         }
 
         public async void OnAudioTranscripted(string message)
